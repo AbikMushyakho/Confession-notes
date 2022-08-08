@@ -1,0 +1,28 @@
+.confession-list{
+
+display: flex;
+justify-content: center;
+/* It automaticall sends down when it is not fitting in the row */
+flex-wrap: wrap;
+margin-top: 1rem;
+margin-bottom: 2rem;
+padding: 0rem 3rem;
+}
+
+.confession-card{
+height: 12rem;
+width:20%;
+border: 0.1rem royalblue solid ;
+margin-top: 2rem;
+margin-left: 2.5rem;
+padding: 2rem 0.5rem;
+border-radius: 8px;
+box-shadow:  0px 0px 5px #ccc;
+position: relative;
+}
+.time-ago {
+position: absolute;
+bottom: 0.5rem;
+font-size: small;
+
+}

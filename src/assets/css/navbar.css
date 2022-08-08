@@ -1,0 +1,21 @@
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(20, 20, 163, 0.521);
+    filter: contrast(80%);
+    padding : 1.5rem;
+    color: white;
+}
+.navbar-title , .navbar-title > a{
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-routes, .navbar-routes>a {
+    color: rgb(228, 228, 228);
+    text-decoration:none;
+
+}
