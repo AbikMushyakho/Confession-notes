@@ -18,3 +18,9 @@ Usages to show success and error alert
  ### Shimmer / Skeleton loader
  Shimmer is used to show transparent objects/ animation while data is being fetched from the database
  `npm install react-shimmer-effect --save`
+
+
+# Hosting Confess Note
+## Netlify
+## Vercel
+## Firebase

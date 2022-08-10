@@ -3,6 +3,7 @@ import Moment from "react-moment";
 import "../assets/css/confessionList.css";
 import { ref, onValue, database as db } from "../config/firebase";
 import { ShimmerSimpleGallery } from "react-shimmer-effects";
+import { deleteConfessnotes } from "../utils/database";
 const ConfessionList = () => {
   const [confessList, setConfessList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,6 +21,7 @@ const ConfessionList = () => {
   ];
 
   useEffect(() => {
+    deleteConfessnotes()
     onValue(ref(db, "confessions"), (snapshot) => {
       const _data = snapshot.val();
       let _confessionList = [];
@@ -28,6 +30,7 @@ const ConfessionList = () => {
       }
       setConfessList(_confessionList);
       setIsLoading(false);
+
     });
   }, []);
 

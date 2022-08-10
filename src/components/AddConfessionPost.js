@@ -4,6 +4,7 @@ import { FaLock } from "react-icons/fa";
 import { set, ref, database as db, onValue } from "../config/firebase";
 import { v4 as uuidv4 } from "uuid";
 import { ToastContainer, toast } from "react-toast";
+import { deleteConfessnotes } from "../utils/database";
 
 const AddConfessionPost = () => {
   const [note, setNote] = useState("");
@@ -20,17 +21,7 @@ const AddConfessionPost = () => {
         if (!err) {
           setNote("");
           toast.success("Confession Added!!!");
-          onValue(ref(db, "confessions"), (snapshot) => {
-            let _data = snapshot.val();
-            for (let key in _data) {
-              let createdAt = new Date(_data[key].createdAt);
-              createdAt.setDate(createdAt.getDate() + 1); // 24 hours
-              if (new Date() >= createdAt) {
-                console.log("Exceeded 24hours, it has to be delete from db.");
-                set(ref(db, "confessions/" + key), null);
-              }
-            }
-          });
+          deleteConfessnotes()
         } else {
           toast.error("Could not add confession!!!");
         }
